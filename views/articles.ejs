@@ -1,0 +1,47 @@
+<%- include layouts/header.ejs %>
+
+        <div class="page-data">
+         <div class="data-btn">
+           <button onClick="addArticle();">+ Add</button>
+         </div>
+         <div class="data-table">
+            <table cellpadding="6">
+                               
+                <% if(data.length){ 
+                                
+                 for(var i = 0;i < data.length;i++) { %>
+                 
+                <tr>
+                    <td class="label">Title:</td> <td><%=data[i].title%></td>
+                </tr>
+                <tr>
+                    <td class="label">Author:</td> <td><%=data[i].author%></td>
+                </tr>
+                <tr>
+                    <td class="label">Published On:</td> <td><%=dateFormatter(data[i].date.getDate(), data[i].date.getMonth(), data[i].date.getFullYear())%></td>
+                </tr>
+                <tr height="200px">
+                    <td class="label" valign="top">Body:</td> <td valign="top"><%=data[i].body%></td>
+                </tr>
+                <tr>    
+                    <td class="label" colspan="2">
+                        <a class="a-inside edit" href="../articles/edit/<%=data[i].id%>">Edit</a>
+                        <a class="a-inside delete" href="../articles/delete/<%=data[i].id%>">Delete</a>
+                    </td>
+                </tr>
+                <tr height="20px"></tr>
+            <% }
+            
+             }else{ %>
+                 <tr>
+                    <td colspan="5">No articles posted yet.</td>
+                 </tr>
+            <% } %>
+                
+                              
+                
+            </table>
+         </div>
+        </div>
+        
+<%- include layouts/footer.ejs %>

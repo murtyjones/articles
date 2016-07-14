@@ -5,12 +5,12 @@
             <form method="post" action="/articles/add">
                 <table cellpadding="11">
                 <tr>
-                    <td class="label">Title</td><td><input type="text" name="title" required /></td>
+                    <td class="label">Title</td><td><input type="text" name="title" maxlength="50" required /></td>
                  </tr>
                  <tr>
-                    <td class="label" valign="top">Body</td><td valign="top"><textarea name="body" required cols="30" rows="5"></textarea></td>
+                    <td class="label" valign="top">Body</td><td valign="top"><textarea name="body" maxlength="1000" required cols="30" rows="5"></textarea></td>
                 </tr>
-                <tr><td class="label" valign="top">Author</td><td><input type="text" name="author" required /></td></tr>
+                <tr><td class="label" valign="top">Author</td><td><input type="text" name="author" maxlength="40" required /></td></tr>
                  <tr>
                     <td class="label"></td>
                     <td>

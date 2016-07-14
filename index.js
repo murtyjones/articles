@@ -39,7 +39,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Methods
-app.get('/', routes.index);
+app.get('/', routes.index;
 app.get('/articles', articles.list);
 app.get('/articles/add', articles.add);
 app.post('/articles/add', articles.save);

@@ -21,7 +21,7 @@
                     <td class="label">Published On:</td> <td><%=dateFormatter(data[i].date.getDate(), data[i].date.getMonth(), data[i].date.getFullYear())%></td>
                 </tr>
                 <tr height="200px">
-                    <td class="label" valign="top">Body:</td> <td valign="top"><%=data[i].body%></td>
+                    <td class="label" valign="top">Body:</td> <td valign="top" style="word-wrap:break-word"><%=data[i].body%></td>
                 </tr>
                 <tr>    
                     <td class="label" colspan="2">

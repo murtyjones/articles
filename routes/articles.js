@@ -76,8 +76,9 @@ exports.save_edit = function(req,res){
     req.getConnection(function (err, connection){
     
         var data = {
-            title : input.title,
-            body : input.body
+            title  : input.title,
+            body   : input.body,
+            author : input.author,
         };
         connection.query("UPDATE article set ? WHERE id = ?",[data,id], function(err, rows)
         {

@@ -41,11 +41,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Methods
 app.get('/', routes.index;
 app.get('/articles', articles.list);
-app.get('/articles/add', articles.add);
+app.post('/articles/add', articles.add);
 app.post('/articles/add', articles.save);
-app.get('/articles/delete/:id', articles.delete_article);
-app.get('/articles/edit/:id', articles.edit);
-app.post('/articles/edit/:id', articles.save_edit);
+app.delete('/articles/delete/:id', articles.delete_article);
+app.put('/articles/edit/:id', articles.edit);
+app.put('/articles/edit/:id', articles.save_edit);
 
 // Start server
 app.set('port', process.env.PORT || 80);

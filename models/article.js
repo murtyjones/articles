@@ -51,12 +51,6 @@ function Article() {
 
   this.update = function(id, article, res) {
     
-   /* data = {
-        title : article.title,
-        body : article.body,
-        author : article.author,
-    }*/
-
     connection.acquire(function(err, con){
       con.query('UPDATE article SET ? where id = ?', [article, id], function(err, result) {
         con.release();

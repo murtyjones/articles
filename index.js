@@ -40,12 +40,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Methods
 app.get('/', routes.index;
-app.get('/articles', articles.list);
-app.post('/articles/add', articles.add);
-app.post('/articles/add', articles.save);
-app.delete('/articles/delete/:id', articles.delete_article);
-app.put('/articles/edit/:id', articles.edit);
-app.put('/articles/edit/:id', articles.save_edit);
+app.get('/articles', articles.list); // Get all articles
+app.get('/articles/:id', articles.single); // Get single article
+app.post('/articles', articles.save); // Create a new article
+app.delete('/articles/:id', articles.delete_article); // Delete an article 
+app.put('/articles/edit/:id', articles.edit); // Update an article
 
 // Start server
 app.set('port', process.env.PORT || 80);
